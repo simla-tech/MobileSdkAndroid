@@ -1,0 +1,13 @@
+.gradle/
+.kotlin/
+.tmp/
+.idea/
+*.iml
+local.properties
+build/
+**/build/
+artifacts/
+.gradle-user-home/
+.android-user-home/
+captures/
+.DS_Store

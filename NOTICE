@@ -1,0 +1,9 @@
+Simla Android SDK
+Copyright 2026 DIGITAL RETAIL TECHNOLOGIES, S.L.
+
+This product contains adapted source code from AndroidX Compose Material Icons
+(`androidx.compose.material:material-icons-extended-android:1.7.5`), developed by
+The Android Open Source Project and licensed under the Apache License 2.0.
+
+Source repository: https://android.googlesource.com/platform/frameworks/support/
+Release: https://developer.android.com/jetpack/androidx/releases/compose-material#1.7.5

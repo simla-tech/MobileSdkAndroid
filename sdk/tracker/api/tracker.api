@@ -1,0 +1,418 @@
+public final class com/simla/android/sdk/tracker/DefaultTrackerEventUpdateListener : com/simla/android/sdk/tracker/TrackerEventUpdateListener {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun onEventUpdate (Lcom/simla/android/sdk/tracker/TrackerEventUpdate;)V
+}
+
+public abstract interface class com/simla/android/sdk/tracker/Tracker {
+	public abstract fun flush (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun setConsentHandler (Lcom/simla/android/sdk/tracker/TrackerConsentHandler;)V
+	public abstract fun setEventUpdateListener (Lcom/simla/android/sdk/tracker/TrackerEventUpdateListener;)V
+	public abstract fun trackCart (Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackClick (Ljava/lang/String;ZLjava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackConsult (Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackContact (Lcom/simla/android/sdk/tracker/TrackerContactChannel;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackFavoriteProduct (Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier;ZLjava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackFileDownload (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackFormStart (Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackFormSubmit (Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackLogin (Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackOpenCart (Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackOrder (Lcom/simla/android/sdk/tracker/TrackerOrderIdentifier;Ljava/lang/String;Ljava/util/List;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackPageView (Ljava/lang/String;Ljava/lang/String;Lcom/simla/android/sdk/tracker/TrackerViewedProduct;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackRegister (Lcom/simla/android/sdk/tracker/TrackerCustomer;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackSubscription (Lcom/simla/android/sdk/tracker/TrackerSubscription;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/simla/android/sdk/tracker/Tracker$DefaultImpls {
+	public static synthetic fun trackCart$default (Lcom/simla/android/sdk/tracker/Tracker;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun trackClick$default (Lcom/simla/android/sdk/tracker/Tracker;Ljava/lang/String;ZLjava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun trackConsult$default (Lcom/simla/android/sdk/tracker/Tracker;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun trackContact$default (Lcom/simla/android/sdk/tracker/Tracker;Lcom/simla/android/sdk/tracker/TrackerContactChannel;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun trackFavoriteProduct$default (Lcom/simla/android/sdk/tracker/Tracker;Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier;ZLjava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun trackFileDownload$default (Lcom/simla/android/sdk/tracker/Tracker;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun trackFormStart$default (Lcom/simla/android/sdk/tracker/Tracker;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun trackFormSubmit$default (Lcom/simla/android/sdk/tracker/Tracker;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun trackLogin$default (Lcom/simla/android/sdk/tracker/Tracker;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun trackOpenCart$default (Lcom/simla/android/sdk/tracker/Tracker;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun trackOrder$default (Lcom/simla/android/sdk/tracker/Tracker;Lcom/simla/android/sdk/tracker/TrackerOrderIdentifier;Ljava/lang/String;Ljava/util/List;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun trackPageView$default (Lcom/simla/android/sdk/tracker/Tracker;Ljava/lang/String;Ljava/lang/String;Lcom/simla/android/sdk/tracker/TrackerViewedProduct;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun trackRegister$default (Lcom/simla/android/sdk/tracker/Tracker;Lcom/simla/android/sdk/tracker/TrackerCustomer;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun trackSubscription$default (Lcom/simla/android/sdk/tracker/Tracker;Lcom/simla/android/sdk/tracker/TrackerSubscription;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerCartItem {
+	public fun <init> (Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier;DI)V
+	public final fun component1 ()Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier;
+	public final fun component2 ()D
+	public final fun component3 ()I
+	public final fun copy (Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier;DI)Lcom/simla/android/sdk/tracker/TrackerCartItem;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/tracker/TrackerCartItem;Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier;DIILjava/lang/Object;)Lcom/simla/android/sdk/tracker/TrackerCartItem;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getOffer ()Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier;
+	public final fun getPrice ()D
+	public final fun getQuantity ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class com/simla/android/sdk/tracker/TrackerConsentHandler {
+	public abstract fun getConsent (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerConsentState : java/lang/Enum {
+	public static final field DENIED Lcom/simla/android/sdk/tracker/TrackerConsentState;
+	public static final field GRANTED Lcom/simla/android/sdk/tracker/TrackerConsentState;
+	public static final field UNKNOWN Lcom/simla/android/sdk/tracker/TrackerConsentState;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/simla/android/sdk/tracker/TrackerConsentState;
+	public static fun values ()[Lcom/simla/android/sdk/tracker/TrackerConsentState;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerContactChannel : java/lang/Enum {
+	public static final field TELEGRAM Lcom/simla/android/sdk/tracker/TrackerContactChannel;
+	public static final field WHATSAPP Lcom/simla/android/sdk/tracker/TrackerContactChannel;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/simla/android/sdk/tracker/TrackerContactChannel;
+	public static fun values ()[Lcom/simla/android/sdk/tracker/TrackerContactChannel;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerCustomer {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun component6 ()Ljava/util/List;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lcom/simla/android/sdk/tracker/TrackerCustomer;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/tracker/TrackerCustomer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ILjava/lang/Object;)Lcom/simla/android/sdk/tracker/TrackerCustomer;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEmail ()Ljava/lang/String;
+	public final fun getFirstName ()Ljava/lang/String;
+	public final fun getLastName ()Ljava/lang/String;
+	public final fun getPatronymic ()Ljava/lang/String;
+	public final fun getPhone ()Ljava/lang/String;
+	public final fun getSubscriptions ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerEventKind : java/lang/Enum {
+	public static final field CART Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static final field CLICK Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static final field CONSULT Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static final field CONTACT Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static final field FAVORITE_PRODUCT Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static final field FILE_DOWNLOAD Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static final field FORM_START Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static final field FORM_SUBMIT Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static final field LOGIN Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static final field OPEN_CART Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static final field ORDER Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static final field PAGE_VIEW Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static final field REGISTER Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static final field SUBSCRIPTION Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static final field UNKNOWN Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public static fun values ()[Lcom/simla/android/sdk/tracker/TrackerEventKind;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerEventReference {
+	public fun <init> (Ljava/lang/String;Lcom/simla/android/sdk/tracker/TrackerEventKind;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public final fun copy (Ljava/lang/String;Lcom/simla/android/sdk/tracker/TrackerEventKind;)Lcom/simla/android/sdk/tracker/TrackerEventReference;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/tracker/TrackerEventReference;Ljava/lang/String;Lcom/simla/android/sdk/tracker/TrackerEventKind;ILjava/lang/Object;)Lcom/simla/android/sdk/tracker/TrackerEventReference;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getId ()Ljava/lang/String;
+	public final fun getKind ()Lcom/simla/android/sdk/tracker/TrackerEventKind;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class com/simla/android/sdk/tracker/TrackerEventUpdate {
+	public abstract fun getEvents ()Ljava/util/List;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerEventUpdate$Delivered : com/simla/android/sdk/tracker/TrackerEventUpdate {
+	public fun <init> (Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;)Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Delivered;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Delivered;Ljava/util/List;ILjava/lang/Object;)Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Delivered;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getEvents ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerEventUpdate$Dropped : com/simla/android/sdk/tracker/TrackerEventUpdate {
+	public fun <init> (Ljava/util/List;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/util/List;Ljava/lang/String;)Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Dropped;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Dropped;Ljava/util/List;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Dropped;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getEvents ()Ljava/util/List;
+	public final fun getReason ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerEventUpdate$Queued : com/simla/android/sdk/tracker/TrackerEventUpdate {
+	public fun <init> (Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;)Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Queued;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Queued;Ljava/util/List;ILjava/lang/Object;)Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Queued;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getEvents ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerEventUpdate$Rejected : com/simla/android/sdk/tracker/TrackerEventUpdate {
+	public fun <init> (Lcom/simla/android/sdk/tracker/TrackerEventReference;Ljava/lang/String;)V
+	public final fun component1 ()Lcom/simla/android/sdk/tracker/TrackerEventReference;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Lcom/simla/android/sdk/tracker/TrackerEventReference;Ljava/lang/String;)Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Rejected;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Rejected;Lcom/simla/android/sdk/tracker/TrackerEventReference;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Rejected;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEvent ()Lcom/simla/android/sdk/tracker/TrackerEventReference;
+	public fun getEvents ()Ljava/util/List;
+	public final fun getReason ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerEventUpdate$RetryScheduled : com/simla/android/sdk/tracker/TrackerEventUpdate {
+	public fun <init> (Ljava/util/List;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/util/List;Ljava/lang/String;)Lcom/simla/android/sdk/tracker/TrackerEventUpdate$RetryScheduled;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/tracker/TrackerEventUpdate$RetryScheduled;Ljava/util/List;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/tracker/TrackerEventUpdate$RetryScheduled;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getEvents ()Ljava/util/List;
+	public final fun getReason ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerEventUpdate$Sending : com/simla/android/sdk/tracker/TrackerEventUpdate {
+	public fun <init> (Ljava/util/List;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/util/List;Ljava/lang/String;)Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Sending;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Sending;Ljava/util/List;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/tracker/TrackerEventUpdate$Sending;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getEvents ()Ljava/util/List;
+	public final fun getPayload ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class com/simla/android/sdk/tracker/TrackerEventUpdateListener {
+	public abstract fun onEventUpdate (Lcom/simla/android/sdk/tracker/TrackerEventUpdate;)V
+}
+
+public final class com/simla/android/sdk/tracker/TrackerFeatureKt {
+	public static final fun tracker (Lcom/simla/android/sdk/CrmSdk;)Lcom/simla/android/sdk/tracker/Tracker;
+	public static final fun tracker (Lcom/simla/android/sdk/CrmSdk;Lcom/simla/android/sdk/tracker/TrackerConsentHandler;)Lcom/simla/android/sdk/tracker/Tracker;
+	public static final fun tracker (Lcom/simla/android/sdk/CrmSdkModulesBuilder;)V
+}
+
+public abstract interface class com/simla/android/sdk/tracker/TrackerOfferIdentifier {
+}
+
+public final class com/simla/android/sdk/tracker/TrackerOfferIdentifier$ExternalId : com/simla/android/sdk/tracker/TrackerOfferIdentifier {
+	public static final synthetic fun box-impl (Ljava/lang/String;)Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier$ExternalId;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getValue ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerOfferIdentifier$SystemId : com/simla/android/sdk/tracker/TrackerOfferIdentifier {
+	public static final synthetic fun box-impl (J)Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier$SystemId;
+	public static fun constructor-impl (J)J
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (JLjava/lang/Object;)Z
+	public static final fun equals-impl0 (JJ)Z
+	public final fun getValue ()J
+	public fun hashCode ()I
+	public static fun hashCode-impl (J)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (J)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()J
+}
+
+public final class com/simla/android/sdk/tracker/TrackerOfferIdentifier$XmlId : com/simla/android/sdk/tracker/TrackerOfferIdentifier {
+	public static final synthetic fun box-impl (Ljava/lang/String;)Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier$XmlId;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getValue ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public abstract interface class com/simla/android/sdk/tracker/TrackerOrderIdentifier {
+}
+
+public final class com/simla/android/sdk/tracker/TrackerOrderIdentifier$ExternalId : com/simla/android/sdk/tracker/TrackerOrderIdentifier {
+	public static final synthetic fun box-impl (Ljava/lang/String;)Lcom/simla/android/sdk/tracker/TrackerOrderIdentifier$ExternalId;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getValue ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerOrderIdentifier$Number : com/simla/android/sdk/tracker/TrackerOrderIdentifier {
+	public static final synthetic fun box-impl (Ljava/lang/String;)Lcom/simla/android/sdk/tracker/TrackerOrderIdentifier$Number;
+	public static fun constructor-impl (Ljava/lang/String;)Ljava/lang/String;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/String;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun getValue ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/String;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/String;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerOrderIdentifier$SystemId : com/simla/android/sdk/tracker/TrackerOrderIdentifier {
+	public static final synthetic fun box-impl (J)Lcom/simla/android/sdk/tracker/TrackerOrderIdentifier$SystemId;
+	public static fun constructor-impl (J)J
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (JLjava/lang/Object;)Z
+	public static final fun equals-impl0 (JJ)Z
+	public final fun getValue ()J
+	public fun hashCode ()I
+	public static fun hashCode-impl (J)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (J)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()J
+}
+
+public abstract interface class com/simla/android/sdk/tracker/TrackerRuntimeConfig {
+	public abstract fun getTrackerBatchSize ()I
+	public abstract fun getTrackerFlushIntervalMs ()J
+	public abstract fun getTrackerMaxQueueSize ()I
+	public abstract fun getTrackerTimeSyncIntervalMs ()J
+}
+
+public final class com/simla/android/sdk/tracker/TrackerSubscription {
+	public fun <init> (Lcom/simla/android/sdk/tracker/TrackerSubscriptionChannel;Ljava/lang/String;Z)V
+	public final fun component1 ()Lcom/simla/android/sdk/tracker/TrackerSubscriptionChannel;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Z
+	public final fun copy (Lcom/simla/android/sdk/tracker/TrackerSubscriptionChannel;Ljava/lang/String;Z)Lcom/simla/android/sdk/tracker/TrackerSubscription;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/tracker/TrackerSubscription;Lcom/simla/android/sdk/tracker/TrackerSubscriptionChannel;Ljava/lang/String;ZILjava/lang/Object;)Lcom/simla/android/sdk/tracker/TrackerSubscription;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getActive ()Z
+	public final fun getAddress ()Ljava/lang/String;
+	public final fun getChannel ()Lcom/simla/android/sdk/tracker/TrackerSubscriptionChannel;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerSubscriptionChannel : java/lang/Enum {
+	public static final field EMAIL Lcom/simla/android/sdk/tracker/TrackerSubscriptionChannel;
+	public static final field SMS Lcom/simla/android/sdk/tracker/TrackerSubscriptionChannel;
+	public static final field WABA Lcom/simla/android/sdk/tracker/TrackerSubscriptionChannel;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/simla/android/sdk/tracker/TrackerSubscriptionChannel;
+	public static fun values ()[Lcom/simla/android/sdk/tracker/TrackerSubscriptionChannel;
+}
+
+public final class com/simla/android/sdk/tracker/TrackerViewedProduct {
+	public fun <init> ()V
+	public fun <init> (Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier;Ljava/lang/Long;Ljava/lang/String;)V
+	public synthetic fun <init> (Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier;Ljava/lang/Long;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier;
+	public final fun component2 ()Ljava/lang/Long;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun copy (Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier;Ljava/lang/Long;Ljava/lang/String;)Lcom/simla/android/sdk/tracker/TrackerViewedProduct;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/tracker/TrackerViewedProduct;Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier;Ljava/lang/Long;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/tracker/TrackerViewedProduct;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBrand ()Ljava/lang/String;
+	public final fun getOffer ()Lcom/simla/android/sdk/tracker/TrackerOfferIdentifier;
+	public final fun getProductId ()Ljava/lang/Long;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/tracker/model/TrackerConnectResponse {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;Lcom/simla/android/sdk/session/SdkConnectedUser;Lcom/simla/android/sdk/session/SdkConnectedSession;Lcom/simla/android/sdk/session/SdkBehaviour;)V
+	public synthetic fun <init> (Ljava/lang/String;Lcom/simla/android/sdk/session/SdkConnectedUser;Lcom/simla/android/sdk/session/SdkConnectedSession;Lcom/simla/android/sdk/session/SdkBehaviour;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Lcom/simla/android/sdk/session/SdkConnectedUser;
+	public final fun component3 ()Lcom/simla/android/sdk/session/SdkConnectedSession;
+	public final fun component4 ()Lcom/simla/android/sdk/session/SdkBehaviour;
+	public final fun copy (Ljava/lang/String;Lcom/simla/android/sdk/session/SdkConnectedUser;Lcom/simla/android/sdk/session/SdkConnectedSession;Lcom/simla/android/sdk/session/SdkBehaviour;)Lcom/simla/android/sdk/tracker/model/TrackerConnectResponse;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/tracker/model/TrackerConnectResponse;Ljava/lang/String;Lcom/simla/android/sdk/session/SdkConnectedUser;Lcom/simla/android/sdk/session/SdkConnectedSession;Lcom/simla/android/sdk/session/SdkBehaviour;ILjava/lang/Object;)Lcom/simla/android/sdk/tracker/model/TrackerConnectResponse;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBehaviour ()Lcom/simla/android/sdk/session/SdkBehaviour;
+	public final fun getSession ()Lcom/simla/android/sdk/session/SdkConnectedSession;
+	public final fun getTs ()Ljava/lang/String;
+	public final fun getUser ()Lcom/simla/android/sdk/session/SdkConnectedUser;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class com/simla/android/sdk/tracker/model/TrackerConnectionResult {
+	public abstract fun getResponse ()Lcom/simla/android/sdk/tracker/model/TrackerConnectResponse;
+}
+
+public final class com/simla/android/sdk/tracker/model/TrackerConnectionResult$Available : com/simla/android/sdk/tracker/model/TrackerConnectionResult {
+	public fun <init> (Lcom/simla/android/sdk/tracker/model/TrackerConnectResponse;)V
+	public final fun component1 ()Lcom/simla/android/sdk/tracker/model/TrackerConnectResponse;
+	public final fun copy (Lcom/simla/android/sdk/tracker/model/TrackerConnectResponse;)Lcom/simla/android/sdk/tracker/model/TrackerConnectionResult$Available;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/tracker/model/TrackerConnectionResult$Available;Lcom/simla/android/sdk/tracker/model/TrackerConnectResponse;ILjava/lang/Object;)Lcom/simla/android/sdk/tracker/model/TrackerConnectionResult$Available;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getResponse ()Lcom/simla/android/sdk/tracker/model/TrackerConnectResponse;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/tracker/model/TrackerConnectionResult$DisabledByServer : com/simla/android/sdk/tracker/model/TrackerConnectionResult {
+	public fun <init> (Lcom/simla/android/sdk/tracker/model/TrackerConnectResponse;)V
+	public final fun component1 ()Lcom/simla/android/sdk/tracker/model/TrackerConnectResponse;
+	public final fun copy (Lcom/simla/android/sdk/tracker/model/TrackerConnectResponse;)Lcom/simla/android/sdk/tracker/model/TrackerConnectionResult$DisabledByServer;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/tracker/model/TrackerConnectionResult$DisabledByServer;Lcom/simla/android/sdk/tracker/model/TrackerConnectResponse;ILjava/lang/Object;)Lcom/simla/android/sdk/tracker/model/TrackerConnectionResult$DisabledByServer;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getResponse ()Lcom/simla/android/sdk/tracker/model/TrackerConnectResponse;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class com/simla/android/sdk/tracker/storage/TrackerStorage {
+	public abstract fun activateScope (Ljava/lang/String;Ljava/lang/String;)Z
+	public abstract fun clear ()V
+	public abstract fun getPendingEvents ()Ljava/lang/String;
+	public abstract fun getTimeSyncState ()Ljava/lang/String;
+	public abstract fun setPendingEvents (Ljava/lang/String;)V
+	public abstract fun setTimeSyncState (Ljava/lang/String;)V
+}
+

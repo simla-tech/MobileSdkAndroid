@@ -1,0 +1,43 @@
+public final class com/simla/android/sdk/consultant/ConsultantFeatureKt {
+	public static final fun onlineConsultant (Lcom/simla/android/sdk/CrmSdk;)Lcom/simla/android/sdk/consultant/OnlineConsultant;
+	public static final fun onlineConsultant (Lcom/simla/android/sdk/CrmSdkModulesBuilder;)V
+}
+
+public abstract interface class com/simla/android/sdk/consultant/OnlineConsultant {
+	public abstract fun getUnreadCount ()Lkotlinx/coroutines/flow/StateFlow;
+}
+
+public final class com/simla/android/sdk/consultant/ui/ComposableSingletons$FullscreenImageViewerKt {
+	public static final field INSTANCE Lcom/simla/android/sdk/consultant/ui/ComposableSingletons$FullscreenImageViewerKt;
+	public static field lambda-1 Lkotlin/jvm/functions/Function2;
+	public static field lambda-2 Lkotlin/jvm/functions/Function2;
+	public static field lambda-3 Lkotlin/jvm/functions/Function2;
+	public fun <init> ()V
+	public final fun getLambda-1$consultant_simlaRelease ()Lkotlin/jvm/functions/Function2;
+	public final fun getLambda-2$consultant_simlaRelease ()Lkotlin/jvm/functions/Function2;
+	public final fun getLambda-3$consultant_simlaRelease ()Lkotlin/jvm/functions/Function2;
+}
+
+public final class com/simla/android/sdk/consultant/ui/ComposableSingletons$OnlineConsultantScreenKt {
+	public static final field INSTANCE Lcom/simla/android/sdk/consultant/ui/ComposableSingletons$OnlineConsultantScreenKt;
+	public static field lambda-1 Lkotlin/jvm/functions/Function3;
+	public fun <init> ()V
+	public final fun getLambda-1$consultant_simlaRelease ()Lkotlin/jvm/functions/Function3;
+}
+
+public final class com/simla/android/sdk/consultant/ui/OnlineConsultantScreenKt {
+	public static final fun OnlineConsultantChatScreen (Lcom/simla/android/sdk/CrmSdk;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V
+}
+
+public final class com/simla/android/sdk/consultant/ui/OnlineConsultantView : android/widget/FrameLayout {
+	public static final field $stable I
+	public fun <init> (Landroid/content/Context;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;I)V
+	public synthetic fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun bind (Lcom/simla/android/sdk/CrmSdk;Lkotlinx/coroutines/CoroutineScope;Landroidx/activity/result/ActivityResultRegistry;Landroidx/lifecycle/LifecycleOwner;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public final fun bind (Lcom/simla/android/sdk/CrmSdk;Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun bind$default (Lcom/simla/android/sdk/consultant/ui/OnlineConsultantView;Lcom/simla/android/sdk/CrmSdk;Lkotlinx/coroutines/CoroutineScope;Landroidx/activity/result/ActivityResultRegistry;Landroidx/lifecycle/LifecycleOwner;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+	public static synthetic fun bind$default (Lcom/simla/android/sdk/consultant/ui/OnlineConsultantView;Lcom/simla/android/sdk/CrmSdk;Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+}
+

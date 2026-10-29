@@ -1,0 +1,166 @@
+name: Publish to Maven Central
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: maven-central-publication
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: gradle
+
+      - name: Validate source branch
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_REF_TYPE" != "branch" || "$GITHUB_REF_NAME" != "$DEFAULT_BRANCH" ]]; then
+            echo "Run publication from the default branch ($DEFAULT_BRANCH)." >&2
+            exit 1
+          fi
+
+      - name: Make Gradle wrapper executable
+        run: chmod +x gradlew
+
+      - name: Run tests and API checks
+        run: ./gradlew --no-daemon sdkTest apiCheckAll
+
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        brand:
+          - simla
+          - retailcrm
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: gradle
+
+      - name: Make Gradle wrapper executable
+        run: chmod +x gradlew
+
+      - name: Build and upload ${{ matrix.brand }} Maven Central bundle
+        env:
+          PUBLICATION_BRAND: ${{ matrix.brand }}
+          JRELEASER_MAVENCENTRAL_USERNAME: ${{ secrets.JRELEASER_MAVENCENTRAL_USER_TOKEN_USERNAME }}
+          JRELEASER_MAVENCENTRAL_PASSWORD: ${{ secrets.JRELEASER_MAVENCENTRAL_USER_TOKEN_PASSWORD }}
+          JRELEASER_GPG_PASSPHRASE: ${{ secrets.JRELEASER_GPG_PASSPHRASE }}
+          JRELEASER_GPG_PUBLIC_KEY: ${{ secrets.JRELEASER_GPG_PUBLIC_KEY }}
+          JRELEASER_GPG_SECRET_KEY: ${{ secrets.JRELEASER_GPG_SECRET_KEY }}
+          SIMLA_POM_DEVELOPER_EMAIL: ${{ secrets.SIMLA_POM_DEVELOPER_EMAIL }}
+          RETAILCRM_POM_DEVELOPER_EMAIL: ${{ secrets.RETAILCRM_POM_DEVELOPER_EMAIL }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          : "${JRELEASER_MAVENCENTRAL_USERNAME:?Configure JRELEASER_MAVENCENTRAL_USER_TOKEN_USERNAME in GitHub Actions secrets}"
+          : "${JRELEASER_MAVENCENTRAL_PASSWORD:?Configure JRELEASER_MAVENCENTRAL_USER_TOKEN_PASSWORD in GitHub Actions secrets}"
+          : "${JRELEASER_GPG_PASSPHRASE:?Configure JRELEASER_GPG_PASSPHRASE in GitHub Actions secrets}"
+          : "${JRELEASER_GPG_PUBLIC_KEY:?Configure JRELEASER_GPG_PUBLIC_KEY in GitHub Actions secrets}"
+          : "${JRELEASER_GPG_SECRET_KEY:?Configure JRELEASER_GPG_SECRET_KEY in GitHub Actions secrets}"
+
+          if [[ "$PUBLICATION_BRAND" == "simla" ]]; then
+            : "${SIMLA_POM_DEVELOPER_EMAIL:?Configure SIMLA_POM_DEVELOPER_EMAIL in GitHub Actions secrets}"
+          else
+            : "${RETAILCRM_POM_DEVELOPER_EMAIL:?Configure RETAILCRM_POM_DEVELOPER_EMAIL in GitHub Actions secrets}"
+          fi
+
+          ./gradlew --no-daemon jreleaserDeploy --dryrun \
+            "-PpublicationBrand=$PUBLICATION_BRAND"
+
+          bundle_count="$(find build/jreleaser/deploy/mavenCentral/central -type f -name '*-bundle.zip' | wc -l | tr -d ' ')"
+          if [[ "$bundle_count" != "1" ]]; then
+            echo "Expected exactly one Maven Central bundle, found $bundle_count" >&2
+            exit 1
+          fi
+
+          bundle_path="$(find build/jreleaser/deploy/mavenCentral/central -type f -name '*-bundle.zip' -print)"
+          group_property="${PUBLICATION_BRAND^^}_GROUP_ID"
+          publication_group="$(awk -F= -v key="$group_property" '$1 == key { print $2 }' gradle.properties | tr -d '\r')"
+          : "${publication_group:?Missing $group_property in gradle.properties}"
+
+          publication_namespace="${publication_group%.sdk}"
+          bundle_filename="$(basename "$bundle_path")"
+          bundle_suffix="${bundle_filename#"$publication_namespace-sdk-"}"
+          if [[ "$bundle_suffix" == "$bundle_filename" ]]; then
+            echo "Unexpected Maven Central bundle name: $bundle_filename" >&2
+            exit 1
+          fi
+
+          renamed_bundle_path="$(dirname "$bundle_path")/$publication_group-$bundle_suffix"
+          mv -- "$bundle_path" "$renamed_bundle_path"
+          bundle_path="$renamed_bundle_path"
+
+          upload_response="build/jreleaser/central-upload-response.txt"
+          central_auth_token="$(printf '%s:%s' "$JRELEASER_MAVENCENTRAL_USERNAME" "$JRELEASER_MAVENCENTRAL_PASSWORD" | base64 | tr -d '\r\n')"
+
+          set +e
+          http_status="$(curl --silent --show-error \
+            --connect-timeout 20 \
+            --max-time 600 \
+            --output "$upload_response" \
+            --write-out '%{http_code}' \
+            --header "Authorization: Bearer $central_auth_token" \
+            --form "bundle=@$bundle_path;type=application/octet-stream" \
+            'https://central.sonatype.com/api/v1/publisher/upload?publishingType=USER_MANAGED')"
+          curl_exit="$?"
+          set -e
+          unset central_auth_token
+
+          if [[ "$curl_exit" -ne 0 ]]; then
+            echo "Maven Central upload request failed (curl exit code $curl_exit, HTTP $http_status). Check the Portal before retrying." >&2
+            exit "$curl_exit"
+          fi
+          if [[ "$http_status" != "201" ]]; then
+            echo "Maven Central rejected the bundle with HTTP $http_status:" >&2
+            sed 's/^/  /' "$upload_response" >&2
+            exit 1
+          fi
+
+          deployment_id="$(tr -d '\r\n' < "$upload_response")"
+          if [[ ! "$deployment_id" =~ ^[[:xdigit:]]{8}(-[[:xdigit:]]{4}){3}-[[:xdigit:]]{12}$ ]]; then
+            echo "Maven Central returned HTTP 201 but no valid deployment ID." >&2
+            exit 1
+          fi
+
+          echo "Maven Central $PUBLICATION_BRAND deployment created: $deployment_id"
+
+      - name: Upload ${{ matrix.brand }} publication diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: maven-central-${{ matrix.brand }}-publication-diagnostics
+          if-no-files-found: ignore
+          retention-days: 7
+          path: |
+            build/jreleaser/trace.log
+            build/jreleaser/output.properties
+            build/jreleaser/central-upload-response.txt

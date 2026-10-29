@@ -1,0 +1,108 @@
+public final class com/simla/android/sdk/recommendations/CrmRecommendationContext {
+	public fun <init> (Ljava/lang/String;Ljava/util/List;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/List;
+	public final fun copy (Ljava/lang/String;Ljava/util/List;)Lcom/simla/android/sdk/recommendations/CrmRecommendationContext;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/recommendations/CrmRecommendationContext;Ljava/lang/String;Ljava/util/List;ILjava/lang/Object;)Lcom/simla/android/sdk/recommendations/CrmRecommendationContext;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getMechanicType ()Ljava/lang/String;
+	public final fun getRequired ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/recommendations/CrmRecommendationProduct {
+	public fun <init> (JJLjava/lang/String;DDLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+	public synthetic fun <init> (JJLjava/lang/String;DDLjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()J
+	public final fun component2 ()J
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()D
+	public final fun component5 ()D
+	public final fun component6 ()Ljava/lang/String;
+	public final fun component7 ()Ljava/lang/String;
+	public final fun component8 ()Ljava/lang/String;
+	public final fun component9 ()Z
+	public final fun copy (JJLjava/lang/String;DDLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Lcom/simla/android/sdk/recommendations/CrmRecommendationProduct;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/recommendations/CrmRecommendationProduct;JJLjava/lang/String;DDLjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Lcom/simla/android/sdk/recommendations/CrmRecommendationProduct;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAvailable ()Z
+	public final fun getCurrency ()Ljava/lang/String;
+	public final fun getId ()J
+	public final fun getImageUrl ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getOldPrice ()D
+	public final fun getPrice ()D
+	public final fun getProductId ()J
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/recommendations/CrmRecommendationRequest {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/Long;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/lang/Long;
+	public final fun component6 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;)Lcom/simla/android/sdk/recommendations/CrmRecommendationRequest;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/recommendations/CrmRecommendationRequest;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/recommendations/CrmRecommendationRequest;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBlockCode ()Ljava/lang/String;
+	public final fun getMechanicCode ()Ljava/lang/String;
+	public final fun getOfferExternalId ()Ljava/lang/String;
+	public final fun getOfferId ()Ljava/lang/Long;
+	public final fun getProductExternalId ()Ljava/lang/String;
+	public final fun getProductId ()Ljava/lang/Long;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/recommendations/CrmRecommendationResult {
+	public fun <init> (JZLcom/simla/android/sdk/recommendations/CrmRecommendationContext;Ljava/util/List;Ljava/util/List;)V
+	public synthetic fun <init> (JZLcom/simla/android/sdk/recommendations/CrmRecommendationContext;Ljava/util/List;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()J
+	public final fun component2 ()Z
+	public final fun component3 ()Lcom/simla/android/sdk/recommendations/CrmRecommendationContext;
+	public final fun component4 ()Ljava/util/List;
+	public final fun component5 ()Ljava/util/List;
+	public final fun copy (JZLcom/simla/android/sdk/recommendations/CrmRecommendationContext;Ljava/util/List;Ljava/util/List;)Lcom/simla/android/sdk/recommendations/CrmRecommendationResult;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/recommendations/CrmRecommendationResult;JZLcom/simla/android/sdk/recommendations/CrmRecommendationContext;Ljava/util/List;Ljava/util/List;ILjava/lang/Object;)Lcom/simla/android/sdk/recommendations/CrmRecommendationResult;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getContext ()Lcom/simla/android/sdk/recommendations/CrmRecommendationContext;
+	public final fun getExecutionId ()J
+	public final fun getPersonalized ()Z
+	public final fun getProductIds ()Ljava/util/List;
+	public final fun getProducts ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/recommendations/CrmRecommendationsHttpException : java/lang/Exception {
+	public fun <init> (ILjava/lang/String;Ljava/util/List;)V
+	public synthetic fun <init> (ILjava/lang/String;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getErrors ()Ljava/util/List;
+	public final fun getHttpCode ()I
+	public final fun getResponseBody ()Ljava/lang/String;
+}
+
+public abstract interface class com/simla/android/sdk/recommendations/Recommendations {
+	public abstract fun getProducts (Lcom/simla/android/sdk/recommendations/CrmRecommendationRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackClick (Lcom/simla/android/sdk/recommendations/CrmRecommendationResult;JLjava/lang/Integer;Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun trackImpression (Lcom/simla/android/sdk/recommendations/CrmRecommendationResult;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/simla/android/sdk/recommendations/Recommendations$DefaultImpls {
+	public static synthetic fun trackClick$default (Lcom/simla/android/sdk/recommendations/Recommendations;Lcom/simla/android/sdk/recommendations/CrmRecommendationResult;JLjava/lang/Integer;Ljava/lang/String;ZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun trackImpression$default (Lcom/simla/android/sdk/recommendations/Recommendations;Lcom/simla/android/sdk/recommendations/CrmRecommendationResult;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class com/simla/android/sdk/recommendations/RecommendationsFeatureKt {
+	public static final fun recommendations (Lcom/simla/android/sdk/CrmSdk;)Lcom/simla/android/sdk/recommendations/Recommendations;
+	public static final fun recommendations (Lcom/simla/android/sdk/CrmSdkModulesBuilder;)V
+}
+

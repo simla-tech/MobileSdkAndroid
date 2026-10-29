@@ -1,0 +1,170 @@
+public final class com/simla/android/sdk/notifications/CrmSdkExtensionsKt {
+	public static final fun firebasePushNotifications (Lcom/simla/android/sdk/CrmSdk;)Lcom/simla/android/sdk/notifications/firebase/FirebasePushNotifications;
+	public static final fun init (Lcom/simla/android/sdk/CrmSdk$Companion;Landroid/content/Context;Lcom/simla/android/sdk/CrmSdkConfig;Lcom/simla/android/sdk/network/SdkNetworkEngine;Lcom/simla/android/sdk/notifications/PushNotificationsConfig;Lcom/simla/android/sdk/session/SessionPageContext;)V
+	public static synthetic fun init$default (Lcom/simla/android/sdk/CrmSdk$Companion;Landroid/content/Context;Lcom/simla/android/sdk/CrmSdkConfig;Lcom/simla/android/sdk/network/SdkNetworkEngine;Lcom/simla/android/sdk/notifications/PushNotificationsConfig;Lcom/simla/android/sdk/session/SessionPageContext;ILjava/lang/Object;)V
+	public static final fun pushNotifications (Lcom/simla/android/sdk/CrmSdkModulesBuilder;Lcom/simla/android/sdk/notifications/PushNotificationsConfig;)V
+}
+
+public final class com/simla/android/sdk/notifications/PushDiagnosticEvent {
+	public fun <init> (Lcom/simla/android/sdk/notifications/PushDiagnosticLevel;Ljava/lang/String;Ljava/lang/Throwable;)V
+	public synthetic fun <init> (Lcom/simla/android/sdk/notifications/PushDiagnosticLevel;Ljava/lang/String;Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lcom/simla/android/sdk/notifications/PushDiagnosticLevel;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/Throwable;
+	public final fun copy (Lcom/simla/android/sdk/notifications/PushDiagnosticLevel;Ljava/lang/String;Ljava/lang/Throwable;)Lcom/simla/android/sdk/notifications/PushDiagnosticEvent;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/notifications/PushDiagnosticEvent;Lcom/simla/android/sdk/notifications/PushDiagnosticLevel;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Object;)Lcom/simla/android/sdk/notifications/PushDiagnosticEvent;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getError ()Ljava/lang/Throwable;
+	public final fun getLevel ()Lcom/simla/android/sdk/notifications/PushDiagnosticLevel;
+	public final fun getMessage ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/notifications/PushDiagnosticLevel : java/lang/Enum {
+	public static final field ERROR Lcom/simla/android/sdk/notifications/PushDiagnosticLevel;
+	public static final field INFO Lcom/simla/android/sdk/notifications/PushDiagnosticLevel;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/simla/android/sdk/notifications/PushDiagnosticLevel;
+	public static fun values ()[Lcom/simla/android/sdk/notifications/PushDiagnosticLevel;
+}
+
+public abstract interface class com/simla/android/sdk/notifications/PushDiagnosticListener {
+	public abstract fun onDiagnosticEvent (Lcom/simla/android/sdk/notifications/PushDiagnosticEvent;)V
+}
+
+public abstract interface class com/simla/android/sdk/notifications/PushNotifications {
+	public abstract fun registerDevice (Ljava/util/Set;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/simla/android/sdk/notifications/PushNotifications$DefaultImpls {
+	public static synthetic fun registerDevice$default (Lcom/simla/android/sdk/notifications/PushNotifications;Ljava/util/Set;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class com/simla/android/sdk/notifications/PushNotificationsConfig {
+	public fun <init> (Lcom/simla/android/sdk/notifications/config/NotificationChannelSetting;)V
+	public final fun component1 ()Lcom/simla/android/sdk/notifications/config/NotificationChannelSetting;
+	public final fun copy (Lcom/simla/android/sdk/notifications/config/NotificationChannelSetting;)Lcom/simla/android/sdk/notifications/PushNotificationsConfig;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/notifications/PushNotificationsConfig;Lcom/simla/android/sdk/notifications/config/NotificationChannelSetting;ILjava/lang/Object;)Lcom/simla/android/sdk/notifications/PushNotificationsConfig;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getNotificationChannel ()Lcom/simla/android/sdk/notifications/config/NotificationChannelSetting;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/notifications/PushNotificationsExtensionsKt {
+	public static final fun pushNotifications (Lcom/simla/android/sdk/CrmSdk;)Lcom/simla/android/sdk/notifications/PushNotifications;
+	public static final fun setDiagnosticListener (Lcom/simla/android/sdk/notifications/PushNotifications;Lcom/simla/android/sdk/notifications/PushDiagnosticListener;)V
+}
+
+public final class com/simla/android/sdk/notifications/PushRegistrationResult {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Lcom/simla/android/sdk/notifications/PushRegistrationResult;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/notifications/PushRegistrationResult;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/notifications/PushRegistrationResult;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getFid ()Ljava/lang/String;
+	public final fun getToken ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/notifications/config/NotificationChannelConfig {
+	public static final field Companion Lcom/simla/android/sdk/notifications/config/NotificationChannelConfig$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZLjava/lang/String;Landroid/net/Uri;Landroid/media/AudioAttributes;Z[JZLjava/lang/Integer;ILjava/lang/Boolean;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZLjava/lang/String;Landroid/net/Uri;Landroid/media/AudioAttributes;Z[JZLjava/lang/Integer;ILjava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component10 ()[J
+	public final fun component11 ()Z
+	public final fun component12 ()Ljava/lang/Integer;
+	public final fun component13 ()I
+	public final fun component14 ()Ljava/lang/Boolean;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()I
+	public final fun component5 ()Z
+	public final fun component6 ()Ljava/lang/String;
+	public final fun component7 ()Landroid/net/Uri;
+	public final fun component8 ()Landroid/media/AudioAttributes;
+	public final fun component9 ()Z
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZLjava/lang/String;Landroid/net/Uri;Landroid/media/AudioAttributes;Z[JZLjava/lang/Integer;ILjava/lang/Boolean;)Lcom/simla/android/sdk/notifications/config/NotificationChannelConfig;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/notifications/config/NotificationChannelConfig;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZLjava/lang/String;Landroid/net/Uri;Landroid/media/AudioAttributes;Z[JZLjava/lang/Integer;ILjava/lang/Boolean;ILjava/lang/Object;)Lcom/simla/android/sdk/notifications/config/NotificationChannelConfig;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAllowBubbles ()Ljava/lang/Boolean;
+	public final fun getChannelDescription ()Ljava/lang/String;
+	public final fun getChannelId ()Ljava/lang/String;
+	public final fun getChannelName ()Ljava/lang/String;
+	public final fun getEnableLights ()Z
+	public final fun getEnableVibration ()Z
+	public final fun getGroupId ()Ljava/lang/String;
+	public final fun getImportance ()I
+	public final fun getLightColor ()Ljava/lang/Integer;
+	public final fun getLockscreenVisibility ()I
+	public final fun getShowBadge ()Z
+	public final fun getSound ()Landroid/net/Uri;
+	public final fun getSoundAudioAttributes ()Landroid/media/AudioAttributes;
+	public final fun getVibrationPattern ()[J
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/notifications/config/NotificationChannelConfig$Companion {
+}
+
+public abstract class com/simla/android/sdk/notifications/config/NotificationChannelSetting {
+	public abstract fun getChannelId ()Ljava/lang/String;
+	public abstract fun getSmallIconResId ()Ljava/lang/Integer;
+}
+
+public final class com/simla/android/sdk/notifications/config/NotificationChannelSetting$CreateNew : com/simla/android/sdk/notifications/config/NotificationChannelSetting {
+	public fun <init> (Lcom/simla/android/sdk/notifications/config/NotificationChannelConfig;Ljava/lang/Integer;)V
+	public synthetic fun <init> (Lcom/simla/android/sdk/notifications/config/NotificationChannelConfig;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lcom/simla/android/sdk/notifications/config/NotificationChannelConfig;
+	public final fun component2 ()Ljava/lang/Integer;
+	public final fun copy (Lcom/simla/android/sdk/notifications/config/NotificationChannelConfig;Ljava/lang/Integer;)Lcom/simla/android/sdk/notifications/config/NotificationChannelSetting$CreateNew;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/notifications/config/NotificationChannelSetting$CreateNew;Lcom/simla/android/sdk/notifications/config/NotificationChannelConfig;Ljava/lang/Integer;ILjava/lang/Object;)Lcom/simla/android/sdk/notifications/config/NotificationChannelSetting$CreateNew;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getChannelId ()Ljava/lang/String;
+	public final fun getConfig ()Lcom/simla/android/sdk/notifications/config/NotificationChannelConfig;
+	public fun getSmallIconResId ()Ljava/lang/Integer;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/notifications/config/NotificationChannelSetting$UseExisting : com/simla/android/sdk/notifications/config/NotificationChannelSetting {
+	public fun <init> (Ljava/lang/String;Ljava/lang/Integer;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/Integer;
+	public final fun copy (Ljava/lang/String;Ljava/lang/Integer;)Lcom/simla/android/sdk/notifications/config/NotificationChannelSetting$UseExisting;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/notifications/config/NotificationChannelSetting$UseExisting;Ljava/lang/String;Ljava/lang/Integer;ILjava/lang/Object;)Lcom/simla/android/sdk/notifications/config/NotificationChannelSetting$UseExisting;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getChannelId ()Ljava/lang/String;
+	public fun getSmallIconResId ()Ljava/lang/Integer;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/notifications/firebase/CrmPushFcmService : com/google/firebase/messaging/FirebaseMessagingService {
+	public fun <init> ()V
+	public fun onMessageReceived (Lcom/google/firebase/messaging/RemoteMessage;)V
+	public fun onNewToken (Ljava/lang/String;)V
+	public fun onRegistered (Ljava/lang/String;)V
+}
+
+public abstract interface class com/simla/android/sdk/notifications/firebase/FirebasePushNotifications : com/simla/android/sdk/notifications/PushNotifications {
+	public abstract fun handleMessage (Landroid/content/Context;Lcom/google/firebase/messaging/RemoteMessage;)Z
+	public abstract fun handleNewToken (Ljava/lang/String;)V
+	public abstract fun handleRegistered (Ljava/lang/String;)V
+}
+
+public final class com/simla/android/sdk/notifications/interaction/CrmPushDismissReceiver : android/content/BroadcastReceiver {
+	public fun <init> ()V
+	public fun onReceive (Landroid/content/Context;Landroid/content/Intent;)V
+}
+
+public final class com/simla/android/sdk/notifications/interaction/CrmPushOpenActivity : android/app/Activity {
+	public fun <init> ()V
+}
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <cache-path
+        name="crm_consultant_image_cache"
+        path="crm-consultant/images/" />
+    <cache-path
+        name="crm_consultant_file_cache"
+        path="crm-consultant/files/" />
+</paths>

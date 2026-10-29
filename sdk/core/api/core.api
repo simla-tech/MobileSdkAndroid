@@ -1,0 +1,325 @@
+public final class com/simla/android/sdk/CrmCustomerIdentity {
+	public fun <init> (J)V
+	public fun <init> (JLjava/lang/String;Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/Long;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)Lcom/simla/android/sdk/CrmCustomerIdentity;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/CrmCustomerIdentity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;ILjava/lang/Object;)Lcom/simla/android/sdk/CrmCustomerIdentity;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCrmCustomerId ()Ljava/lang/Long;
+	public final fun getSiteCode ()Ljava/lang/String;
+	public final fun getSiteCustomerId ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/CrmSdk {
+	public static final field Companion Lcom/simla/android/sdk/CrmSdk$Companion;
+	public synthetic fun <init> (Landroid/content/Context;Lcom/simla/android/sdk/CrmSdkConfig;Lcom/simla/android/sdk/network/SdkNetworkEngine;Lcom/simla/android/sdk/runtime/CrmRuntime;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public static final fun getInstance ()Lcom/simla/android/sdk/CrmSdk;
+	public static final fun init (Landroid/content/Context;Lcom/simla/android/sdk/CrmSdkConfig;Lcom/simla/android/sdk/network/SdkNetworkEngine;Lcom/simla/android/sdk/session/SessionPageContext;)V
+	public static final fun init (Landroid/content/Context;Lcom/simla/android/sdk/CrmSdkConfig;Lcom/simla/android/sdk/network/SdkNetworkEngine;Lcom/simla/android/sdk/session/SessionPageContext;Lkotlin/jvm/functions/Function1;)V
+	public final fun setCustomerIdentity (Lcom/simla/android/sdk/CrmCustomerIdentity;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/simla/android/sdk/CrmSdk$Companion {
+	public final fun getInstance ()Lcom/simla/android/sdk/CrmSdk;
+	public final fun init (Landroid/content/Context;Lcom/simla/android/sdk/CrmSdkConfig;Lcom/simla/android/sdk/network/SdkNetworkEngine;Lcom/simla/android/sdk/session/SessionPageContext;)V
+	public final fun init (Landroid/content/Context;Lcom/simla/android/sdk/CrmSdkConfig;Lcom/simla/android/sdk/network/SdkNetworkEngine;Lcom/simla/android/sdk/session/SessionPageContext;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun init$default (Lcom/simla/android/sdk/CrmSdk$Companion;Landroid/content/Context;Lcom/simla/android/sdk/CrmSdkConfig;Lcom/simla/android/sdk/network/SdkNetworkEngine;Lcom/simla/android/sdk/session/SessionPageContext;ILjava/lang/Object;)V
+	public static synthetic fun init$default (Lcom/simla/android/sdk/CrmSdk$Companion;Landroid/content/Context;Lcom/simla/android/sdk/CrmSdkConfig;Lcom/simla/android/sdk/network/SdkNetworkEngine;Lcom/simla/android/sdk/session/SessionPageContext;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+}
+
+public final class com/simla/android/sdk/CrmSdkConfig {
+	public static final field Companion Lcom/simla/android/sdk/CrmSdkConfig$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Z)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Z
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Z)Lcom/simla/android/sdk/CrmSdkConfig;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/CrmSdkConfig;Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Lcom/simla/android/sdk/CrmSdkConfig;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBaseUrl ()Ljava/lang/String;
+	public final fun getClientApiBaseUrl ()Ljava/lang/String;
+	public final fun getDebug ()Z
+	public final fun getSiteToken ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/CrmSdkConfig$Companion {
+}
+
+public abstract interface annotation class com/simla/android/sdk/CrmSdkInternalApi : java/lang/annotation/Annotation {
+}
+
+public final class com/simla/android/sdk/CrmSdkModulesBuilder {
+}
+
+public class com/simla/android/sdk/error/CrmSdkException : java/lang/Exception {
+	public fun <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+}
+
+public final class com/simla/android/sdk/error/SdkHttpException : com/simla/android/sdk/error/CrmSdkException {
+	public fun <init> (Ljava/lang/String;ILjava/lang/String;Ljava/lang/Throwable;)V
+	public synthetic fun <init> (Ljava/lang/String;ILjava/lang/String;Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getHttpCode ()I
+	public final fun getResponseBody ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/logging/DefaultSdkLogger : com/simla/android/sdk/logging/SdkLogger {
+	public fun <init> (Z)V
+	public fun d (Ljava/lang/String;)V
+	public fun e (Ljava/lang/String;Ljava/lang/Throwable;)V
+}
+
+public abstract interface class com/simla/android/sdk/logging/SdkLogger {
+	public abstract fun d (Ljava/lang/String;)V
+	public abstract fun e (Ljava/lang/String;Ljava/lang/Throwable;)V
+}
+
+public final class com/simla/android/sdk/logging/SdkLogger$DefaultImpls {
+	public static synthetic fun e$default (Lcom/simla/android/sdk/logging/SdkLogger;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Object;)V
+}
+
+public abstract interface class com/simla/android/sdk/network/SdkHttpNetworkEngine {
+	public abstract fun close ()V
+	public abstract fun getJson (Lcom/simla/android/sdk/network/SdkHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun postJson (Lcom/simla/android/sdk/network/SdkHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun postRaw (Lcom/simla/android/sdk/network/SdkRawHttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/simla/android/sdk/network/SdkHttpRequest {
+	public fun <init> (Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/Map;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Lcom/simla/android/sdk/network/SdkHttpRequest;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/network/SdkHttpRequest;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/network/SdkHttpRequest;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBody ()Ljava/lang/String;
+	public final fun getHeaders ()Ljava/util/Map;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/network/SdkHttpResponse {
+	public fun <init> (ILjava/lang/String;Ljava/util/Map;Ljava/lang/String;)V
+	public synthetic fun <init> (ILjava/lang/String;Ljava/util/Map;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()I
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (ILjava/lang/String;Ljava/util/Map;Ljava/lang/String;)Lcom/simla/android/sdk/network/SdkHttpResponse;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/network/SdkHttpResponse;ILjava/lang/String;Ljava/util/Map;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/network/SdkHttpResponse;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBody ()Ljava/lang/String;
+	public final fun getCode ()I
+	public final fun getHeaders ()Ljava/util/Map;
+	public final fun getMessage ()Ljava/lang/String;
+	public fun hashCode ()I
+	public final fun isSuccessful ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class com/simla/android/sdk/network/SdkNetworkEngine : com/simla/android/sdk/network/SdkHttpNetworkEngine {
+	public abstract fun close ()V
+	public abstract fun openWebSocket (Lcom/simla/android/sdk/network/SdkWebSocketRequest;Lcom/simla/android/sdk/network/SdkWebSocketSessionListener;)Lcom/simla/android/sdk/network/SdkWebSocketSession;
+}
+
+public final class com/simla/android/sdk/network/SdkRawHttpRequest {
+	public fun <init> (Ljava/lang/String;Ljava/util/Map;[BLjava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;[BLjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/Map;
+	public final fun component3 ()[B
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/util/Map;[BLjava/lang/String;)Lcom/simla/android/sdk/network/SdkRawHttpRequest;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/network/SdkRawHttpRequest;Ljava/lang/String;Ljava/util/Map;[BLjava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/network/SdkRawHttpRequest;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBody ()[B
+	public final fun getContentType ()Ljava/lang/String;
+	public final fun getHeaders ()Ljava/util/Map;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/network/SdkWebSocketRequest {
+	public fun <init> (Ljava/lang/String;Ljava/util/Map;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/Map;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/Map;
+	public final fun copy (Ljava/lang/String;Ljava/util/Map;)Lcom/simla/android/sdk/network/SdkWebSocketRequest;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/network/SdkWebSocketRequest;Ljava/lang/String;Ljava/util/Map;ILjava/lang/Object;)Lcom/simla/android/sdk/network/SdkWebSocketRequest;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getHeaders ()Ljava/util/Map;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class com/simla/android/sdk/network/SdkWebSocketSession {
+	public abstract fun close (ILjava/lang/String;)Z
+}
+
+public abstract interface class com/simla/android/sdk/network/SdkWebSocketSessionListener {
+	public abstract fun onBinaryMessage ([B)V
+	public abstract fun onClosed (ILjava/lang/String;)V
+	public abstract fun onClosing (ILjava/lang/String;)V
+	public abstract fun onFailure (Ljava/lang/Throwable;Lcom/simla/android/sdk/network/SdkHttpResponse;)V
+	public abstract fun onOpen (Lcom/simla/android/sdk/network/SdkHttpResponse;)V
+	public abstract fun onTextMessage (Ljava/lang/String;)V
+}
+
+public final class com/simla/android/sdk/runtime/SdkPlatform {
+	public static final field INSTANCE Lcom/simla/android/sdk/runtime/SdkPlatform;
+	public static final field name Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/session/SdkBehaviour {
+	public fun <init> ()V
+	public fun <init> (ZLjava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;)V
+	public synthetic fun <init> (ZLjava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Z
+	public final fun component2 ()Ljava/lang/Boolean;
+	public final fun component3 ()Ljava/lang/Boolean;
+	public final fun component4 ()Ljava/lang/Boolean;
+	public final fun component5 ()Ljava/lang/Boolean;
+	public final fun copy (ZLjava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;)Lcom/simla/android/sdk/session/SdkBehaviour;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/session/SdkBehaviour;ZLjava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;ILjava/lang/Object;)Lcom/simla/android/sdk/session/SdkBehaviour;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getConsentForm ()Ljava/lang/Boolean;
+	public final fun getGpc ()Ljava/lang/Boolean;
+	public final fun getTracker ()Ljava/lang/Boolean;
+	public final fun getWidget ()Ljava/lang/Boolean;
+	public fun hashCode ()I
+	public final fun isOffline ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/session/SdkConnectRequest {
+	public fun <init> ()V
+	public fun <init> (Lcom/simla/android/sdk/session/SdkUserPayload;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Lcom/simla/android/sdk/session/SdkUserPayload;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lcom/simla/android/sdk/session/SdkUserPayload;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (Lcom/simla/android/sdk/session/SdkUserPayload;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/simla/android/sdk/session/SdkConnectRequest;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/session/SdkConnectRequest;Lcom/simla/android/sdk/session/SdkUserPayload;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/session/SdkConnectRequest;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getPageTitle ()Ljava/lang/String;
+	public final fun getReferUrl ()Ljava/lang/String;
+	public final fun getUrl ()Ljava/lang/String;
+	public final fun getUser ()Lcom/simla/android/sdk/session/SdkUserPayload;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/session/SdkConnectedSession {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/simla/android/sdk/session/SdkConnectedSession;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/session/SdkConnectedSession;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/session/SdkConnectedSession;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getId ()Ljava/lang/String;
+	public final fun getIdValue ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/session/SdkConnectedUser {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/simla/android/sdk/session/SdkConnectedUser;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/session/SdkConnectedUser;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/session/SdkConnectedUser;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEmail ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getPhone ()Ljava/lang/String;
+	public final fun getToken ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/session/SdkSession {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/simla/android/sdk/session/SdkSession;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/session/SdkSession;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/session/SdkSession;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getPlatformName ()Ljava/lang/String;
+	public final fun getSessionId ()Ljava/lang/String;
+	public final fun getSiteToken ()Ljava/lang/String;
+	public final fun getUserToken ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/session/SdkUserPayload {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/simla/android/sdk/session/SdkUserPayload;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/session/SdkUserPayload;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/session/SdkUserPayload;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEmail ()Ljava/lang/String;
+	public final fun getLanguage ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getPhone ()Ljava/lang/String;
+	public final fun getToken ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/simla/android/sdk/session/SessionPageContext {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/simla/android/sdk/session/SessionPageContext;
+	public static synthetic fun copy$default (Lcom/simla/android/sdk/session/SessionPageContext;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/simla/android/sdk/session/SessionPageContext;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getReferUrl ()Ljava/lang/String;
+	public final fun getTitle ()Ljava/lang/String;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class com/simla/android/sdk/storage/SdkSessionStorage {
+	public abstract fun activateScope (Ljava/lang/String;)V
+	public abstract fun clear ()V
+	public abstract fun getUserToken ()Ljava/lang/String;
+	public abstract fun setUserToken (Ljava/lang/String;)V
+}
+
+public final class com/simla/android/sdk/storage/SdkSessionStorage$DefaultImpls {
+	public static fun activateScope (Lcom/simla/android/sdk/storage/SdkSessionStorage;Ljava/lang/String;)V
+}
+
